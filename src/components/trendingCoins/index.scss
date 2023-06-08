@@ -1,0 +1,26 @@
+
+
+
+.trending-coins-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 1rem;
+
+    /*--------Title--------*/
+    .title {
+        text-transform: capitalize;
+        padding: 1rem 0;
+        font-size: .95rem;
+        color: #fff;
+    }
+
+
+    /*--------Coins--------*/
+    .coins {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        color: #fff;
+        gap: 1rem;
+    }
+}

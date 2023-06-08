@@ -1,0 +1,38 @@
+
+
+.trending-coin {
+    border: 1px solid #6a6a6a;
+    border-radius: 2px;;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem .7rem;
+    transition: border .2s linear;
+    
+    &:hover {
+        border-color: #fff;
+    }
+
+    > img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100px;
+        align-self: flex-end;
+    }
+
+    &_name {
+        flex: 1;
+    }
+
+    &_name, &_rank {
+        h4 {
+            color: #fff;
+        }
+        small {
+            color: #b8b6b6;
+            margin-bottom: .5rem;
+            display: inline-block;
+        }
+    }
+}

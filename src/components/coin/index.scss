@@ -1,0 +1,111 @@
+
+
+@mixin MediaQuery($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+#{selector-nest('tbody', '.table_coin')} {
+    border-bottom: .5px solid rgba(#3f3f3f, .3);
+    gap: .5rem;
+
+    .coin-rank {
+        font-size: .95rem;
+    }
+
+    .coin-image {
+        justify-self: start;
+        min-width: 100px;
+        a {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: #fff;
+            font-size: .93rem;
+            img {
+                width: 37px;
+                height: 37px;
+                object-fit: cover;
+            }
+            h4 {
+                display: none;
+            }
+            h4[data-mobile] {
+                display: inline-block;
+            }
+        }
+    }
+
+    .coin-price {
+        justify-self: start;
+        width: 100%;;
+        font-size: .94rem;
+        text-align: center;
+    }
+
+    .coin-change24h {
+        // justify-self: start;
+        display: flex;
+        align-items: center;
+        span:nth-of-type(1) {
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+    }
+
+    .coin-marketCap {
+        font-size: .94rem;
+        display: none;
+    }
+
+    .remove-button {
+        button {
+            padding: .2rem;
+            font-size: 1.5rem;
+            background-color: transparent;
+            transition: all .1s linear;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 3px;
+            &:hover {
+                background-color: #053bfd;
+            }
+        }
+    }
+
+    /*---------Media-Queries---------*/
+    @include MediaQuery(35em) {
+        .coin-image {
+            min-width: 220px;
+            a {
+                font-size: .94rem;
+                h4 {
+                    display: inline-block;
+                }
+                h4[data-mobile] {
+                    display: none;
+                }
+            }
+        }
+        .remove-button {
+           button {
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            background-color: #3861fb;
+           }
+        }
+    }
+
+    @include MediaQuery(43em) {
+        .coin-image {
+            min-width: auto;
+        }
+
+        .coin-marketCap {
+            font-size: .94rem;
+            display: inline-block;
+        }
+    }
+}

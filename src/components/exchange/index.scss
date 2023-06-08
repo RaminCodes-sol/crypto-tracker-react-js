@@ -1,0 +1,71 @@
+
+
+@mixin MediaQuery($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+#{selector-nest('tbody', '.table_exchange')} {
+    border-bottom:  .5px solid rgba(#3f3f3f, .3);
+    border-left:  .5px solid rgba(#3f3f3f, .3);
+    border-right:  .5px solid rgba(#3f3f3f, .3);
+    gap: .5rem;
+    
+    .exchange-image {
+        justify-self: start;
+        min-width: 110px;
+        a {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            color: #fff;
+            font-size: .8rem;
+            img {
+                width: 37px;
+                height: 37px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .exchange-score {
+        span {
+            width: 32px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .4rem;
+            border-radius: 5px;
+            font-size: .96rem;
+            font-weight: 700;
+        }
+    }
+
+    .exchange-tradingVolume {
+        display: flex;
+        align-items: center;
+
+        span:nth-of-type(1) {
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+    }
+
+    .exchange-country {
+        font-size: .94rem;
+        display: none;
+    }
+
+    
+    /*---------Media-Queries---------*/
+    @include MediaQuery(38em) {
+        .exchange-image {
+            min-width: 100px;
+        }
+        .exchange-country {
+            display: inline-block;
+        }
+    }
+}
